@@ -1,0 +1,39 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../qmk_userspace_sr"
+        },
+        {
+            "path": "../qmk_firmware"
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.c": "c",
+            "*.cpp": "cpp",
+            "*.h": "c",
+            "*.hpp": "cpp",
+            "*.inc": "c",
+            "ranges": "c",
+            "type_traits": "c",
+            "utility": "c",
+            "xstddef": "c"
+        },
+        "terminal.integrated.cursorStyle": "line",
+        "terminal.integrated.profiles.windows": {
+            "QMK_MSYS": {
+                "args": [
+                    "--login"
+                ],
+                "env": {
+                    "CHERE_INVOKING": "1",
+                    "MSYSTEM": "MINGW64"
+                },
+                "path": "C:/QMK_MSYS/usr/bin/bash.exe"
+            }
+        }
+    }
+}

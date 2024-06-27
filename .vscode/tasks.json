@@ -1,0 +1,44 @@
+{
+  "tasks": [
+    {
+      "command": "docker compose run --rm qmk_userspace qmk compile -kb splitkb/kyria/rev3 -km spacerockmedia",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "label": "Build kyria",
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "command": "docker compose run --rm qmk_userspace qmk compile -kb reviung/reviung41 -km spacerock",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "label": "Build reviung41",
+      "type": "shell"
+    },
+    {
+      "command": "docker compose run --rm qmk_userspace qmk compile -kb crkbd -km spacerock",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "label": "Build crkbd",
+      "type": "shell"
+    },
+    {
+      "command": "docker compose run --rm qmk_userspace qmk compile -kb hillside/52 -km spacerock",
+      "group": {
+        "isDefault": false,
+        "kind": "build"
+      },
+      "label": "Build hillside",
+      "type": "shell"
+    }
+  ],
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0"
+}
