@@ -5,4 +5,4 @@
 
 #define COMBO_TERM 35
 // use GAME layer for combo binding
-#define COMBO_ONLY_FROM_LAYER 1
+#define COMBO_ONLY_FROM_LAYER 0

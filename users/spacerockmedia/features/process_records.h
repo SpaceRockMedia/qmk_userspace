@@ -4,7 +4,7 @@
 #pragma once
 
 #include "os_detection.h"
-#include "keycodes/keycodes.h"
+#include "keycodes/custom_codes.h"
 
 #ifdef BOOTMAGIC_ENABLE
 #    include "util/util.h"

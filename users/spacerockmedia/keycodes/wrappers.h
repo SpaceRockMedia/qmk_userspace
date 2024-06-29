@@ -22,7 +22,7 @@ NOTE: These are all the same length.  If you do a search/replace
   lengths consistent.
 */
 
-#define LAYOUT_wrapper(...)   LAYOUT(__VA_ARGS__)
+// #define LAYOUT_wrapper(...)   LAYOUT(__VA_ARGS__)
 
 #define HRM_GUI_A    LGUI_T(KC_A)
 #define HRM_GUI_SCLN RGUI_T(KC_SCLN)
@@ -74,9 +74,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ____________________FN_ROW_LEFT_____________________ KC_F1, KC_F2, KC_F3, KC_F4,  KC_F5,  KC_F6
 #define ____________________FN_ROW_RIGHT____________________ KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12
 
-#define ____________________NUM_ROW_LEFT____________________ KC_1, KC_2, KC_3, KC_4,  KC_5,  KC_6
-#define ____________________NUM_ROW_RIGHT___________________ KC_7, KC_8, KC_9, KC_10, KC_11, KC_12
-
+#define ____________________NUM_ROW_LEFT____________________ KC_1, KC_2, KC_3, KC_4, KC_5,    KC_6
+#define ____________________NUM_ROW_RIGHT___________________ KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQUAL
 
 #define __________________RGB_INC__________________ RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI
 #define __________________RGB_DEC__________________ RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD
@@ -85,7 +84,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define __________________NAV__LM__________________ KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN
 
 #define ________________NUM_PAD_TOP________________ KC_ASTR,  KC_7, KC_8, KC_9, KC_PLUS
-#define ________________NUM_PAD_MID________________ KKC_SLSH, KC_4, KC_5, KC_6, KC_MINSS
+#define ________________NUM_PAD_MID________________ KC_SLSH, KC_4, KC_5, KC_6, KC_MINS
 #define ________________NUM_PAD_BOT________________ KC_ASTR,  KC_7, KC_8, KC_9, KC_PLUS
 
 
