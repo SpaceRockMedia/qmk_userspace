@@ -4,9 +4,6 @@
             "path": "."
         },
         {
-            "path": "../qmk_userspace_sr"
-        },
-        {
             "path": "../qmk_firmware"
         }
     ],
