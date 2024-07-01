@@ -32,7 +32,7 @@ const char *get_layer_name_string(layer_state_t state) {
             return "QWERTY\n";
         case _NAV:
             return "Nav\n";
-        case _MEDIA:
+        case _NUM:
             return "Media\n";
         case _ADJUST:
             return "Adjust\n";

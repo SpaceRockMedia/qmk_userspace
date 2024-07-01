@@ -10,6 +10,7 @@
 #    include "util/util.h"
 #endif
 
+#include "features/achordion/process_records.h"
 #include "features/callum/process_records.h"
 #include "features/layers/process_records.h"
 #include "features/macros/process_records.h"

@@ -16,8 +16,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_wrapper(
     __LPN__, ____________________FN_ROW_LEFT_____________________,                    ____________________FN_ROW_RIGHT____________________, __RPN__,
     __LPT__, _______________QWERTY__L_TOP_______________, KC_LBRC,                    KC_RBRC, _______________QWERTY__R_TOP_______________, __RPT__,
-    __LPM__, _______________QWERTY__L_MID_______________, KC_LCBR,                    KC_RCBR, _______________QWERTY__R_MID_______________, __RPM__,
-    __LPB__, _______________COLEMAK_L_BOT_______________, LY_ADJ,                     LY_ADJ,  _______________QWERTY__R_BOT_______________, __RPB__,
+    __LPM__, _______________QWERTY__L_MID_HRM___________, KC_LCBR,                    KC_RCBR, _______________QWERTY__R_MID_HRM___________, __RPM__,
+    __LPB__, _______________QWERTY__L_BOT_______________, LY_ADJ,                     LY_ADJ,  _______________QWERTY__R_BOT_______________, __RPB__,
                       KC_LCTL,  KC_LGUI, _______THUMB_LEFT________,   LF_ENC, RT_ENC, _______THUMB_RIGHT_______,  KC_RGUI,  KC_RCTL
 ),
 
@@ -25,8 +25,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK] = LAYOUT_wrapper(
     __LPN__, ____________________FN_ROW_LEFT_____________________,                   ____________________FN_ROW_RIGHT____________________, __RPN__,
     __LPT__, _______________COLEMAK_L_TOP_______________, KC_LBRC,                   KC_RBRC, _______________COLEMAK_R_TOP_______________, __RPT__,
-    __LPM__, _______________COLEMAK_L_MID_______________, KC_LCBR,                   KC_RCBR, _______________COLEMAK_R_MID_______________, __RPM__,
-    __LPB__, _______________COLEMAK_L_BOT_______________, LY_ADJ,                    LY_ADJ,  _______________QWERTY__L_BOT_______________, __RPB__,
+    __LPM__, _______________COLEMAK_L_MID_HRM_____I_____, KC_LCBR,                   KC_RCBR, _______________COLEMAK_R_MID_HRM___________, __RPM__,
+    __LPB__, _______________COLEMAK_L_BOT_______________, LY_ADJ,                    LY_ADJ,  _______________COLEMAK_L_BOT_______________, __RPB__,
                        KC_LCTL, KC_LGUI, _______THUMB_LEFT________, _______, _______, _______THUMB_RIGHT_______, KC_RGUI,KC_RCTL
 ),
 
@@ -39,11 +39,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 
-[_MEDIA] = LAYOUT_wrapper(
+[_NUM] = LAYOUT_wrapper(
     KC_GRV,  ____________________NUM_ROW_LEFT____________________,                   ____________________NUM_ROW_RIGHT___________________, _______,
-    _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______,                   _______, ________________NUM_PAD_TOP________________, _______,
+    _______, _______, _______, _______, _______, _______, _______,                   _______, ________________NUM_PAD_TOP________________, _______,
+    _______, _______, _______, _______, _______, _______, _______,                   _______, ________________NUM_PAD_BOT________________, _______,
                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
@@ -60,21 +60,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     switch (keycode) {
 //         case LOWER:
 //             if (record->event.pressed) {
-//                 layer_on(_MEDIA);
-//                 update_tri_layer(_MEDIA, _NAV, _ADJUST);
+//                 layer_on(_NUM);
+//                 update_tri_layer(_NUM, _NAV, _ADJUST);
 //             } else {
-//                 layer_off(_MEDIA);
-//                 update_tri_layer(_MEDIA, _NAV, _ADJUST);
+//                 layer_off(_NUM);
+//                 update_tri_layer(_NUM, _NAV, _ADJUST);
 //             }
 //             return false;
 //             break;
 //         case RAISE:
 //             if (record->event.pressed) {
 //                 layer_on(_NAV);
-//                 update_tri_layer(_MEDIA, _NAV, _ADJUST);
+//                 update_tri_layer(_NUM, _NAV, _ADJUST);
 //             } else {
 //                 layer_off(_NAV);
-//                 update_tri_layer(_MEDIA, _NAV, _ADJUST);
+//                 update_tri_layer(_NUM, _NAV, _ADJUST);
 //             }
 //             return false;
 //             break;

@@ -22,45 +22,51 @@ NOTE: These are all the same length.  If you do a search/replace
   lengths consistent.
 */
 
-// #define LAYOUT_wrapper(...)   LAYOUT(__VA_ARGS__)
-
+// QWERTY
 #define HRM_GUI_A    LGUI_T(KC_A)
-#define HRM_GUI_SCLN RGUI_T(KC_SCLN)
-#define HRM_GUI_O    RGUI_T(KC_O)
 #define HRM_ALT_S    LALT_T(KC_S)
-#define HRM_ALT_R    LALT_T(KC_R)
+#define HRM_CTL_D    LCTL_T(KC_D)
+#define HRM_SFT_F    LSFT_T(KC_F)
+#define HRM_SFT_J    RSFT_T(KC_J)
+#define HRM_CTL_K    RCTL_T(KC_K)
 #define HRM_ALT_L    RALT_T(KC_L)
-#define HRM_ALT_I    RALT_T(KC_I)
-#define HRM_SFT_D    LSFT_T(KC_D)
-#define HRM_SFT_S    LSFT_T(KC_S)
-#define HRM_SFT_E    RSFT_T(KC_E)
-#define HRM_SFT_K    RSFT_T(KC_K)
-#define HRM_CTL_F    LCTL_T(KC_F)
-#define HRM_CTL_T    LCTL_T(KC_T)
-#define HRM_CTL_J    RCTL_T(KC_J)
-#define HRM_CTL_N    RCTL_T(KC_N)
+#define HRM_GUI_SCLN RGUI_T(KC_SCLN)
 
+// COLEMAK
+#define HRM_ALT_R    LALT_T(KC_R)
+#define HRM_CTL_S    LCTL_T(KC_S)
+#define HRM_SFT_T    LSFT_T(KC_T)
+#define HRM_SFT_N    RSFT_T(KC_N)
+#define HRM_CTL_E    RCTL_T(KC_E)
+#define HRM_ALT_I    RALT_T(KC_I)
+#define HRM_GUI_O    RGUI_T(KC_O)
+
+
+#define __________COLEMAK_GACS___________ HRM_GUI_A, HRM_ALT_R, HRM_CTL_S, HRM_SFT_T
+#define __________COLEMAK_SCAG___________ HRM_SFT_N, HRM_CTL_E, HRM_ALT_I, HRM_GUI_O
+#define ___________QWERTY_GACS___________ HRM_GUI_A, HRM_ALT_S, HRM_CTL_D, HRM_SFT_F
+#define ___________QWERTY_SCAG___________ HRM_SFT_J, HRM_CTL_K, HRM_ALT_L, HRM_GUI_SCLN
 
 // clang-format off
-#define _______________COLEMAK_L_TOP_______________ KC_Q, KC_W,    KC_F,    KC_P,    KC_B
-#define _______________COLEMAK_L_MID_______________ KC_A, KC_R,    KC_S,    KC_T,    KC_G
-#define _______________COLEMAK_L_MID_GACS__________ HRM_GUI_A, HRM_ALT_R, HRM_SFT_S, HRM_CTL_T, KC_G
-#define _______________COLEMAK_L_BOT_______________ KC_Z, KC_X,    KC_C,    KC_D,    KC_V
+#define _______________QWERTY__L_TOP_______________ KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
+#define _______________QWERTY__L_MID_______________ KC_A,    KC_S,    KC_D,    KC_F,    KC_G
+#define _______________QWERTY__L_MID_HRM___________ ___________QWERTY_GACS___________,  KC_G
+#define _______________QWERTY__L_BOT_______________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
 
-#define _______________COLEMAK_R_TOP_______________ KC_J, KC_L,    KC_U,    KC_Y,    KC_SCLN
-#define _______________COLEMAK_R_MID_______________ KC_M, KC_N,    KC_E,    KC_I,    KC_O
-#define _______________COLEMAK_R_MID_SCAG__________ KC_M, HRM_CTL_N, HRM_SFT_E, HRM_ALT_I, HRM_GUI_O
-#define _______________COLEMAK_R_BOT_______________ KC_K, KC_H,    KC_COMM, KC_DOT,  KC_QUES
+#define _______________QWERTY__R_TOP_______________ KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
+#define _______________QWERTY__R_MID_______________ KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
+#define _______________QWERTY__R_MID_HRM___________ KC_H, ___________QWERTY_SCAG___________
+#define _______________QWERTY__R_BOT_______________ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_QUES
 
-#define _______________QWERTY__L_TOP_______________ KC_Q, KC_W, KC_E, KC_R, KC_T
-#define _______________QWERTY__L_MID_______________ KC_A, KC_S, KC_D, KC_F, KC_G
-#define _______________QWERTY__L_MID_GACS__________ HRM_GUI_A, HRM_ALT_S, HRM_SFT_D, HRM_CTL_F, KC_G
-#define _______________QWERTY__L_BOT_______________ KC_Z, KC_X, KC_C, KC_V, KC_B
+#define _______________COLEMAK_L_TOP_______________ KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
+#define _______________COLEMAK_L_MID_______________ KC_A,    KC_R,    KC_S,    KC_T,    KC_G
+#define _______________COLEMAK_L_MID_HRM_____I_____ __________COLEMAK_GACS___________,  KC_G
+#define _______________COLEMAK_L_BOT_______________ KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
 
-#define _______________QWERTY__R_TOP_______________ KC_Y, KC_U, KC_I,    KC_O,   KC_P
-#define _______________QWERTY__R_MID_______________ KC_H, KC_J, KC_K, KC_L, KC_SCLN
-#define _______________QWERTY__R_MID_SCAG__________ KC_H, HRM_CTL_J, HRM_SFT_K, HRM_ALT_L, HRM_GUI_SCLN
-#define _______________QWERTY__R_BOT_______________ KC_N, KC_M, KC_COMM, KC_DOT, KC_QUES
+#define _______________COLEMAK_R_TOP_______________ KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN
+#define _______________COLEMAK_R_MID_______________ KC_M,    KC_N,    KC_E,    KC_I,    KC_O
+#define _______________COLEMAK_R_MID_HRM___________ KC_M, __________COLEMAK_SCAG___________
+#define _______________COLEMAK_R_BOT_______________ KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_QUES
 
 #define _______THUMB_LEFT________                   LY_NAV, MEH_T(KC_SPC), KC_LSFT
 #define _______THUMB_RIGHT_______                   KC_RSFT, MEH_T(KC_ENT), LY_NAV

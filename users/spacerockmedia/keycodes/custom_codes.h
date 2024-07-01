@@ -48,7 +48,7 @@ typedef enum userspace_custom_keycodes {
 //
 #define LY_NAV TT(_NAV)
 #define LY_ADJ MO(_ADJUST)
-#define LY_MED MO(_MEDIA)
+#define LY_MED MO(_NUM)
 
 //
 // Abbreviations

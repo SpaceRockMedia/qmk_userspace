@@ -54,9 +54,9 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 //     // if `true` is returned with a given code, it will force use the hold action
 //     // this applies if the sequence happens before the TAPPING_TERM limit
 //     switch (keycode) {
-//         case LALT_T(KC_SPC):
-//         case RALT_T(KC_ENT):
-//         case LY_NAV:
+//         case HRM_GUI_A:
+//         case HRM_ALT_S:
+//         case HRM_CTL_D:
 //             // Immediately select the hold action when another key is pressed.
 //             return true;
 //         default:
@@ -64,3 +64,24 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 //             return false;
 //     }
 // }
+
+uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
+  // If you quickly hold a tap-hold key after tapping it, the tap action is
+  // repeated. Key repeating is useful e.g. for Vim navigation keys, but can
+  // lead to missed triggers in fast typing. Here, returning 0 means we
+  // instead want to "force hold" and disable key repeating.
+    switch (keycode) {
+        // Repeating is useful for Vim navigation keys.
+        case HRM_SFT_J:
+        case HRM_CTL_K:
+        case HRM_ALT_L:
+        case HRM_GUI_SCLN:
+        case HRM_SFT_N:
+        case HRM_CTL_E:
+        case HRM_ALT_I:
+        case HRM_GUI_O:
+            return QUICK_TAP_TERM;  // Enable key repeating.
+        default:
+            return 0;  // Otherwise, force hold and disable key repeating.
+    }
+}

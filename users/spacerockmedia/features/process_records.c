@@ -38,6 +38,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
     }
 
+    #ifdef FEATURE_ACHORDION_ENABLE
+        if (!process_record_features_achordion(keycode, record)) {
+            return false;
+        }
+    #endif
+
     //
     // Repeat
     // this needs to be the first check for keycodes unless achordion is used then
@@ -57,13 +63,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
     }
 
-    if (!process_record_features_callum(keycode, record)) {
-        return false;
-    }
+    #ifdef FEATURE_CALLUM_ENABLE
+        if (!process_record_features_callum(keycode, record)) {
+            return false;
+        }
+    #endif
 
-    if (!process_record_features_caps_word(keycode, record)) {
-        return false;
-    }
+
+    #ifdef CAPS_WORD_ENABLE
+        if (!process_record_features_caps_word(keycode, record)) {
+            return false;
+        }
+    #endif
 
     if (!process_record_features_macros(keycode, record)) {
         return false;

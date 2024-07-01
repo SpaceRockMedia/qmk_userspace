@@ -3,12 +3,18 @@ SRC += $(USER_PATH)/features/callbacks.c \
        $(USER_PATH)/features/layers/callbacks.c \
        $(USER_PATH)/features/layers/process_records.c \
        $(USER_PATH)/features/macros/process_records.c \
-       $(USER_PATH)/features/caps_word/callbacks.c \
-       $(USER_PATH)/features/caps_word/process_records.c \
        $(USER_PATH)/features/taps/callbacks.c \
        $(USER_PATH)/features/taps/taps.c
 
-FEATURE_CALLUM_ENABLE ?= yes
+FEATURE_ACHORDION_ENABLE ?= no
+ifeq ($(strip $(FEATURE_ACHORDION_ENABLE)), yes)
+	SRC += $(USER_PATH)/features/achordion/achordion.c
+	SRC += $(USER_PATH)/features/achordion/callbacks.c
+	SRC += $(USER_PATH)/features/achordion/process_records.c
+	OPT_DEFS += -DFEATURE_ACHORDION_ENABLE
+endif
+
+FEATURE_CALLUM_ENABLE ?= no
 ifeq ($(strip $(FEATURE_CALLUM_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/callum/callum.c
 	SRC += $(USER_PATH)/features/callum/swapper.c
@@ -16,20 +22,20 @@ ifeq ($(strip $(FEATURE_CALLUM_ENABLE)), yes)
 	OPT_DEFS += -DFEATURE_CALLUM_ENABLE
 endif
 
-FEATURE_REPEAT_KEY_ENABLE ?= yes
+FEATURE_REPEAT_KEY_ENABLE ?= no
 ifeq ($(strip $(FEATURE_REPEAT_KEY_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/repeat_key/callbacks.c
 	SRC += $(USER_PATH)/features/repeat_key/repeat_key.c
 	OPT_DEFS += -DFEATURE_REPEAT_KEY_ENABLE
 endif
 
-FEATURE_SENTENCE_CASE_ENABLE ?= yes
+FEATURE_SENTENCE_CASE_ENABLE ?= no
 ifeq ($(strip $(FEATURE_SENTENCE_CASE_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/sentence_case/sentence_case.c
 	OPT_DEFS += -DFEATURE_SENTENCE_CASE_ENABLE
 endif
 
-LEADER_ENABLE ?= yes
+LEADER_ENABLE ?= no
 ifeq ($(strip $(LEADER_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/leader/leader.c
 endif
@@ -46,7 +52,7 @@ ifeq ($(strip $(AUDIO_ENABLE)), yes)
 # 	SRC += $(USER_PATH)/features/audio/udio.c
 endif
 
-OLED_ENABLE        ?= yes
+OLED_ENABLE        ?= no
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	OLED_DRIVER ?= ssd1306
 	WPM_ENABLE ?= yes
@@ -57,7 +63,7 @@ ifeq ($(strip $(OLED_ENABLE)), yes)
     # DEFERRED_EXEC_ENABLE = yes
 endif
 
-RGB_MATRIX_ENABLE ?= yes
+RGB_MATRIX_ENABLE ?= no
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/rgb/callbacks.c
 endif
@@ -71,7 +77,7 @@ endif
 DYNAMIC_TAPPING_TERM_ENABLE ?= no
 TAPPING_TERM_PER_KEY        ?= yes
 
-CAPS_WORD_ENABLE ?= yes
+CAPS_WORD_ENABLE ?= no
 ifeq ($(strip $(CAPS_WORD_ENABLE)), yes)
 	SRC += $(USER_PATH)/features/caps_word/callbacks.c
 	SRC += $(USER_PATH)/features/caps_word/process_records.c

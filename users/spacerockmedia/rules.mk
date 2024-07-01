@@ -40,6 +40,7 @@ EXTRAKEY_ENABLE     ?= yes	# multi media keys
 KEY_OVERRIDE_ENABLE ?= no
 MOUSEKEY_ENABLE     ?= no       # Mouse keys
 OS_DETECTION_ENABLE ?= yes
+REPEAT_KEY_ENABLE   ?= yes
 
 AUTO_SHIFT_ENABLE    ?= no
 

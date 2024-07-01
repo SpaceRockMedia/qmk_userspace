@@ -24,7 +24,7 @@
 //                         // F Keys
 //                         (layer == _NAV && row == 2)
 //                         // digits
-//                         || (layer == _MEDIA && (col >= 14 && col <= 19))
+//                         || (layer == _NUM && (col >= 14 && col <= 19))
 //                         // rgb inputs
 //                         || (layer == _ADJUST && (row >= 1 && row <= 3))
 //                     ) {

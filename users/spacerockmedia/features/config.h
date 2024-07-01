@@ -33,3 +33,7 @@
 #ifdef RGB_MATRIX_ENABLE
 #    include "features/rgb/config.h"
 #endif
+
+#ifdef FEATURE_ACHORDION_ENABLE
+#    include "features/achordion/config.h"
+#endif

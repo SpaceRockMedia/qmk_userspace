@@ -2,12 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-#include QMK_KEYBOARD_H
 
-typedef enum userspace_layers {
-    _QWERTY = 0,
-    _COLEMAK,
-    _NAV,
-    _NUM,
-    _ADJUST,
-} CUSTOM_LAYERS_T;
+#include "spacerockmedia.h"
+
+bool process_record_features_achordion(uint16_t keycode, keyrecord_t *record);

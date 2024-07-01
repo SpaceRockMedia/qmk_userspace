@@ -170,7 +170,7 @@ __attribute__((weak)) bool get_repeat_key_eligible(uint16_t keycode,
     case QK_ONE_SHOT_MOD ... QK_ONE_SHOT_MOD_MAX:
 #endif  // NO_ACTION_ONESHOT
 #ifdef TRI_LAYER_ENABLE  // Ignore Tri Layer keys.
-    case QK_TRI_LAYER_MEDIA:
+    case QK_TRI_LAYER_NUM:
     case QK_TRI_LAYER_UPPER:
 #endif  // TRI_LAYER_ENABLE
       return false;
