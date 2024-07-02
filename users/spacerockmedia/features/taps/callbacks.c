@@ -20,15 +20,15 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 // RETRO_TAPPING_PER_KEY
 // https://docs.qmk.fm/#/tap_hold?id=retro-tapping
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LT(2, KC_SPC):
-            return true;
-        default:
-            // use retro functionality by default
-            return true;
-    }
-}
+// bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case LT(2, KC_SPC):
+//             return true;
+//         default:
+//             // use retro functionality by default
+//             return true;
+//     }
+// }
 
 // -----------------------------------------------------------------------------
 // https://docs.qmk.fm/#/tap_hold

@@ -13,7 +13,13 @@
 #    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #endif
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150  // limits maximum brightness of LEDs (max 255). Higher may cause the controller to crash.
+#ifdef RGB_MATRIX_DEFAULT_VAL
+#    undef RGB_MATRIX_DEFAULT_VAL
+#endif
 #define RGB_MATRIX_DEFAULT_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS // Sets the default brightness value, if none has been set
+#ifdef RGB_MATRIX_DEFAULT_SPD
+#    undef RGB_MATRIX_DEFAULT_SPD
+#endif
 #define RGB_MATRIX_DEFAULT_SPD 127 // Sets the default animation speed, if none has been set
 #define ENABLE_RGB_MATRIX_ALPHAS_MODS
 #define RGB_DISABLE_WHEN_USB_SUSPENDED     // turn off effects when suspended

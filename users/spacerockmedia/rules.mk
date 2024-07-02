@@ -38,17 +38,16 @@ CONSOLE_ENABLE      ?= no       # Console for debug
 DEFERRED_EXEC_ENABLE = yes
 EXTRAKEY_ENABLE     ?= yes	# multi media keys
 KEY_OVERRIDE_ENABLE ?= no
-MOUSEKEY_ENABLE     ?= no       # Mouse keys
 OS_DETECTION_ENABLE ?= yes
 REPEAT_KEY_ENABLE   ?= yes
 
-AUTO_SHIFT_ENABLE    ?= no
+AUTO_SHIFT_ENABLE   ?= no
 
 # ┌─────────────────────────────────────────────────┐
 # │ u t i l i t y                                   │
 # └─────────────────────────────────────────────────┘
 
-BOOTMAGIC_ENABLE ?= yes      # Enable Bootmagic Lite
+BOOTMAGIC_ENABLE ?= no      # Enable Bootmagic Lite
 ifeq ($(strip $(BOOTMAGIC_ENABLE)), yes)
 	SRC += util/util.c
 endif

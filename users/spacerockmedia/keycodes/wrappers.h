@@ -53,7 +53,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________QWERTY__L_MID_HRM___________ ___________QWERTY_GACS___________,  KC_G
 #define _______________QWERTY__L_BOT_______________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
 
-#define _______________QWERTY__R_TOP_______________ KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
+#define _______________QWERTY__R_TOP_______________ KC_Y,    KC_U,    LY_WIN,  KC_O,    KC_P
 #define _______________QWERTY__R_MID_______________ KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
 #define _______________QWERTY__R_MID_HRM___________ KC_H, ___________QWERTY_SCAG___________
 #define _______________QWERTY__R_BOT_______________ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_QUES
@@ -68,8 +68,10 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________COLEMAK_R_MID_HRM___________ KC_M, __________COLEMAK_SCAG___________
 #define _______________COLEMAK_R_BOT_______________ KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_QUES
 
-#define _______THUMB_LEFT________                   LY_NAV, MEH_T(KC_SPC), KC_LSFT
-#define _______THUMB_RIGHT_______                   KC_RSFT, MEH_T(KC_ENT), LY_NAV
+#define _TWO_THUMB_RGHT_                            KC_RSFT, LT(_NAV, KC_ENT)
+
+#define _______THUMB_LEFT________                   MEH_T(KC_BSPC), LT(_NUM, KC_SPC), KC_LSFT
+#define _______THUMB_RIGHT_______                   _TWO_THUMB_RGHT_, MEH_T(KC_DEL)
 
 #define ______FOUR_THUMB_LEFT____________           KC_LCTL, ____THREE_THUMB_LEFT_____
 #define ______FOUR_THUMB_RIGHT___________           ____THREE_THUMB_RIGHT____, KC_RCTL

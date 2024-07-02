@@ -5,4 +5,4 @@
 
 #include "quantum.h"
 
-bool matrix_scan_user_achordion(void);
+void matrix_scan_user_achordion(void);

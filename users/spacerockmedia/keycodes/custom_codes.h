@@ -47,8 +47,9 @@ typedef enum userspace_custom_keycodes {
 // Layers
 //
 #define LY_NAV TT(_NAV)
+#define LY_NUM MO(_NUM)
 #define LY_ADJ MO(_ADJUST)
-#define LY_MED MO(_NUM)
+#define LY_WIN LT(_WIN, KC_I)
 
 //
 // Abbreviations
@@ -93,3 +94,10 @@ typedef enum userspace_custom_keycodes {
 #define CTALESC LCTL(LALT(KC_ESC))
 #define CTL_ESC CTL_T(KC_ESC)
 #define CTL_QUO CTL_T(KC_QUOT)
+
+#define W_UP    LGUI(KC_UP)
+#define W_DOWN  LGUI(KC_DOWN)
+#define W_LEFT  LGUI(KC_LEFT)
+#define W_RGHT  LGUI(KC_RIGHT)
+#define WS_LEFT SGUI(KC_LEFT)
+#define WS_RGHT SGUI(KC_RIGHT)

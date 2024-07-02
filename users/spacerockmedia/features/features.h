@@ -8,7 +8,7 @@
 #include "features/callbacks.h"
 #include "features/process_records.h"
 
-#ifdef LEADER_ENABLE
+#ifdef FEATURE_CALLUM_ENABLE
 #    include "features/callum/callum.h"
 #    include "features/callum/swapper.h"
 #endif

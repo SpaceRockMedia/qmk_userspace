@@ -10,4 +10,5 @@ typedef enum userspace_layers {
     _NAV,
     _NUM,
     _ADJUST,
+    _WIN,
 } CUSTOM_LAYERS_T;

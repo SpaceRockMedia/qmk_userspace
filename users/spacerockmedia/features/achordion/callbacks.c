@@ -2,7 +2,7 @@
 #include "features/achordion/achordion.h"
 #include "features/achordion/callbacks.h"
 
-bool matrix_scan_user_achordion(void) {
+void matrix_scan_user_achordion(void) {
         achordion_task();
 }
 
