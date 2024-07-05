@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "spacerockmedia.h"
+#include "features/taps/config.h"
+#include "features/taps/process_records.h"
 
 // TAPPING_TERM_PER_KEY
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -17,18 +19,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM;
     }
 }
-
-// RETRO_TAPPING_PER_KEY
-// https://docs.qmk.fm/#/tap_hold?id=retro-tapping
-// bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
-//         case LT(2, KC_SPC):
-//             return true;
-//         default:
-//             // use retro functionality by default
-//             return true;
-//     }
-// }
 
 // -----------------------------------------------------------------------------
 // https://docs.qmk.fm/#/tap_hold
@@ -48,23 +38,8 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-// HOLD_ON_OTHER_KEY_PRESS_PER_KEY
-// https://docs.qmk.fm/#/tap_hold?id=hold-on-other-key-press
-// bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-//     // if `true` is returned with a given code, it will force use the hold action
-//     // this applies if the sequence happens before the TAPPING_TERM limit
-//     switch (keycode) {
-//         case HRM_GUI_A:
-//         case HRM_ALT_S:
-//         case HRM_CTL_D:
-//             // Immediately select the hold action when another key is pressed.
-//             return true;
-//         default:
-//             // Do not select the hold action when another key is pressed.
-//             return false;
-//     }
-// }
-
+// Quick Tap Term
+// https://docs.qmk.fm/tap_hold#quick-tap-term
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t* record) {
   // If you quickly hold a tap-hold key after tapping it, the tap action is
   // repeated. Key repeating is useful e.g. for Vim navigation keys, but can

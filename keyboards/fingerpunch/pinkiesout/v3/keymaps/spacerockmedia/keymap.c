@@ -4,16 +4,6 @@
 
 // clang-format off
 
-typedef enum userspace_layers {
-    _QWERTY = 0,
-    _COLEMAK,
-    _NAV,
-    _NUM,
-    _ADJUST,
-    _WIN,
-} CUSTOM_LAYERS_T;
-
-
 #define LAYOUT_wrapper(...)   LAYOUT_pinkiesout(__VA_ARGS__)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -33,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     __LPT__, _______________QWERTY__L_TOP_______________, KC_LBRC,                   KC_RBRC, _______________QWERTY__R_TOP_______________, __RPT__,
 //     __LPM__, _______________QWERTY__L_MID_HRM___________, KC_LCBR,                   KC_RCBR, _______________QWERTY__R_MID_HRM___________, __RPM__,
 //     __LPB__, _______________QWERTY__L_BOT_______________, LY_ADJ,                    LY_ADJ,  _______________QWERTY__R_BOT_______________, __RPB__,
-//                      KC_LCTL,  KC_LGUI, _______THUMB_LEFT________, LF_ENC,  RT_ENC,  _______THUMB_RIGHT_______,  KC_RGUI,  KC_RCTL
+//                      KC_LCTL,  KC_LGUI, ____THREE_THUMB_LEFT_____, LF_ENC,  RT_ENC,  _______THUMB_RIGHT_______,  KC_RGUI,  KC_RCTL
 // ),
 
 
@@ -42,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     __LPT__, _______________COLEMAK_L_TOP_______________, KC_LBRC,                   KC_RBRC, _______________COLEMAK_R_TOP_______________, __RPT__,
 //     __LPM__, _______________COLEMAK_L_MID_HRM_____I_____, KC_LCBR,                   KC_RCBR, _______________COLEMAK_R_MID_HRM___________, __RPM__,
 //     __LPB__, _______________COLEMAK_L_BOT_______________, LY_ADJ,                    LY_ADJ,  _______________COLEMAK_L_BOT_______________, __RPB__,
-//                       KC_LCTL, KC_LGUI, _______THUMB_LEFT________, _______, _______, _______THUMB_RIGHT_______, KC_RGUI,KC_RCTL
+//                       KC_LCTL, KC_LGUI, ____THREE_THUMB_LEFT_____, _______, _______, _______THUMB_RIGHT_______, KC_RGUI,KC_RCTL
 // ),
 [_COLEMAK] =  LAYOUT_pinkiesout(
     _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
@@ -72,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
-[_WIN] =  LAYOUT_pinkiesout(
+[_POINTER] =  LAYOUT_pinkiesout(
     _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
@@ -105,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 // ),
 
-// [_WIN] =  LAYOUT_wrapper(
+// [_POINTER] =  LAYOUT_wrapper(
 //     _______, ____________________NUM_ROW_LEFT____________________,                   ____________________NUM_ROW_RIGHT___________________, _______,
 //     _______, _______, WS_LEFT, W_UP,    WS_RGHT, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
 //     _______, _______, W_LEFT,  W_DOWN,  W_RGHT,  _______, _______,                   _______, _______, _______, _______, _______, _______, _______,

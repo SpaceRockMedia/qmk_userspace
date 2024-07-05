@@ -42,42 +42,54 @@ NOTE: These are all the same length.  If you do a search/replace
 #define HRM_GUI_O    RGUI_T(KC_O)
 
 
-#define __________COLEMAK_GACS___________ HRM_GUI_A, HRM_ALT_R, HRM_CTL_S, HRM_SFT_T
-#define __________COLEMAK_SCAG___________ HRM_SFT_N, HRM_CTL_E, HRM_ALT_I, HRM_GUI_O
-#define ___________QWERTY_GACS___________ HRM_GUI_A, HRM_ALT_S, HRM_CTL_D, HRM_SFT_F
-#define ___________QWERTY_SCAG___________ HRM_SFT_J, HRM_CTL_K, HRM_ALT_L, HRM_GUI_SCLN
+#define _______________GACS_______________ KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT
+#define _______________SCAG_______________ KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI
+
+#define ___________COLEMAK_GACS___________ HRM_GUI_A, HRM_ALT_R, HRM_CTL_S, HRM_SFT_T
+#define ___________COLEMAK_SCAG___________ HRM_SFT_N, HRM_CTL_E, HRM_ALT_I, HRM_GUI_O
+#define ____________QWERTY_GACS___________ HRM_GUI_A, HRM_ALT_S, HRM_CTL_D, HRM_SFT_F
+#define ____________QWERTY_SCAG___________ HRM_SFT_J, HRM_CTL_K, HRM_ALT_L, HRM_GUI_SCLN
 
 // clang-format off
 #define _______________QWERTY__L_TOP_______________ KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
 #define _______________QWERTY__L_MID_______________ KC_A,    KC_S,    KC_D,    KC_F,    KC_G
-#define _______________QWERTY__L_MID_HRM___________ ___________QWERTY_GACS___________,  KC_G
-#define _______________QWERTY__L_BOT_______________ KC_Z,    KC_X,    KC_C,    KC_V,    KC_B
+#define _______________QWERTY__L_MID_HRM___________ ____________QWERTY_GACS___________, KC_G
+#define _______________QWERTY__L_BOT_______________ PT_Z,    KC_X,    KC_C,    KC_V,    KC_B
 
-#define _______________QWERTY__R_TOP_______________ KC_Y,    KC_U,    LY_WIN,  KC_O,    KC_P
+#define _______________QWERTY__R_TOP_______________ KC_Y,    KC_U,    KC_I,    KC_O,    KC_P
 #define _______________QWERTY__R_MID_______________ KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
-#define _______________QWERTY__R_MID_HRM___________ KC_H, ___________QWERTY_SCAG___________
-#define _______________QWERTY__R_BOT_______________ KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_QUES
+#define _______________QWERTY__R_MID_HRM___________ KC_H, ____________QWERTY_SCAG___________
+#define _______________QWERTY__R_BOT_______________ KC_N,    KC_M,    KC_COMM, KC_DOT,  PT_QUES
 
 #define _______________COLEMAK_L_TOP_______________ KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
 #define _______________COLEMAK_L_MID_______________ KC_A,    KC_R,    KC_S,    KC_T,    KC_G
-#define _______________COLEMAK_L_MID_HRM_____I_____ __________COLEMAK_GACS___________,  KC_G
-#define _______________COLEMAK_L_BOT_______________ KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
+#define _______________COLEMAK_L_MID_HRM_____I_____ ___________COLEMAK_GACS___________, KC_G
+#define _______________COLEMAK_L_BOT_______________ PT_Z,    KC_X,    KC_C,    KC_D,    KC_V
 
 #define _______________COLEMAK_R_TOP_______________ KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN
 #define _______________COLEMAK_R_MID_______________ KC_M,    KC_N,    KC_E,    KC_I,    KC_O
-#define _______________COLEMAK_R_MID_HRM___________ KC_M, __________COLEMAK_SCAG___________
-#define _______________COLEMAK_R_BOT_______________ KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_QUES
+#define _______________COLEMAK_R_MID_HRM___________ KC_M, ___________COLEMAK_SCAG___________
+#define _______________COLEMAK_R_BOT_______________ KC_K,    KC_H,    KC_COMM, KC_DOT,  PT_QUES
 
-#define _TWO_THUMB_RGHT_                            KC_RSFT, LT(_NAV, KC_ENT)
+#define _______________POINTER_L_TOP_______________ _______, WS_LEFT, W_UP,    WS_RGHT, S_D_MOD
+#define _______________POINTER_L_MID_______________ _______, W_LEFT,  W_DOWN,  W_RGHT,  DPI_MOD
+#define _______________POINTER_L_BOT_______________ xxxxxxx, DRGSCRL, SNIPING, _______, _______
 
-#define _______THUMB_LEFT________                   MEH_T(KC_BSPC), LT(_NUM, KC_SPC), KC_LSFT
-#define _______THUMB_RIGHT_______                   _TWO_THUMB_RGHT_, MEH_T(KC_DEL)
+#define _______________POINTER_R_TOP_______________ S_D_MOD, WS_LEFT, W_UP,    WS_RGHT, _______
+#define _______________POINTER_R_MID_______________ DPI_MOD, W_LEFT,  W_DOWN,  W_RGHT,  _______
+#define _______________POINTER_R_BOT_______________ _______, _______, SNIPING, DRGSCRL, xxxxxxx
 
-#define ______FOUR_THUMB_LEFT____________           KC_LCTL, ____THREE_THUMB_LEFT_____
-#define ______FOUR_THUMB_RIGHT___________           ____THREE_THUMB_RIGHT____, KC_RCTL
+#define _TWO_THUMB_LEFT_                            LT(_NUM, KC_SPC), TD_LSFT_NUM
+#define _TWO_THUMB_RGHT_                            TD_RSFT_NAV, LT(_NAV, KC_ENT)
 
-#define ______________FIVE_THUMB_LEFT______________ KC_LCTL, ______FOUR_THUMB_LEFT____________
-#define ______________FIVE_THUMB_RIGHT_____________ ______FOUR_THUMB_RIGHT___________, KC_RCTL
+#define ____THREE_THUMB_LEFT_____                   MEH_T(KC_BSPC), _TWO_THUMB_LEFT_
+#define ____THREE_THUMB_RIGHT____                   _TWO_THUMB_RGHT_, MEH_T(KC_DEL)
+
+#define _________FOUR_THUMB_LEFT__________           KC_LCTL, ____THREE_THUMB_LEFT_____
+#define _________FOUR_THUMB_RIGHT_________           ____THREE_THUMB_RIGHT____, KC_RCTL
+
+#define ______________FIVE_THUMB_LEFT______________ KC_LGUI, _________FOUR_THUMB_LEFT__________
+#define ______________FIVE_THUMB_RIGHT_____________ _________FOUR_THUMB_RIGHT_________, KC_RGUI
 
 #define ____________________FN_ROW_LEFT_____________________ KC_F1, KC_F2, KC_F3, KC_F4,  KC_F5,  KC_F6
 #define ____________________FN_ROW_RIGHT____________________ KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12
@@ -85,26 +97,31 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ____________________NUM_ROW_LEFT____________________ KC_1, KC_2, KC_3, KC_4, KC_5,    KC_6
 #define ____________________NUM_ROW_RIGHT___________________ KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQUAL
 
+#define __________________RGB_TOP__________________ RGB_TOG, _______, _______, _______, _______
 #define __________________RGB_INC__________________ RGB_MOD,  RGB_SPI, RGB_HUI, RGB_SAI, RGB_VAI
 #define __________________RGB_DEC__________________ RGB_RMOD, RGB_SPD, RGB_HUD, RGB_SAD, RGB_VAD
 
 #define __________________NAV__LT__________________ KC_PGUP, M_LEFT,  KC_UP,   M_RIGHT, M_UP
 #define __________________NAV__LM__________________ KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, M_DOWN
 
-#define ________________NUM_PAD_TOP________________ KC_ASTR,  KC_7, KC_8, KC_9, KC_PLUS
-#define ________________NUM_PAD_MID________________ KC_SLSH, KC_4, KC_5, KC_6, KC_MINS
-#define ________________NUM_PAD_BOT________________ KC_ASTR,  KC_7, KC_8, KC_9, KC_PLUS
+#define ________________NUM_PAD_TOP________________ KC_EQL,  KC_7, KC_8, KC_9, KC_MINS
+#define ________________NUM_PAD_MID________________ KC_SLSH, KC_4, KC_5, KC_6, KC_PLUS
+#define ________________NUM_PAD_BOT________________ KC_0,    KC_1, KC_2, KC_3, KC_SLSH
 
+#define _______MOUSE_LEFT________ KC_BTN2, KC_BTN1, KC_BTN3
+#define __MOUSE_RIGHT___          KC_BTN3, KC_BTN1
 
+// 6th column keys for base layers
 #define __LPN__ KC_GRV
-#define __LPT__ KC_TAB
+#define __LPT__ LT(_ADJUST, KC_GRV)
 #define __LPM__ HYPR_T(QK_LEAD)
 #define __LPB__ KC_LGUI
 
 #define __RPN__ LY_ADJ
-#define __RPT__ LY_ADJ
+#define __RPT__ LT(_ADJUST, KC_DEL)
 #define __RPM__ HYPR_T(QK_LEAD)
 #define __RPB__ KC_RGUI
 
+// encoders
 #define LF_ENC KC_MUTE
 #define RT_ENC KC_MUTE

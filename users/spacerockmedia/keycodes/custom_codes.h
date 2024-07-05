@@ -49,17 +49,19 @@ typedef enum userspace_custom_keycodes {
 #define LY_NAV TT(_NAV)
 #define LY_NUM MO(_NUM)
 #define LY_ADJ MO(_ADJUST)
-#define LY_WIN LT(_WIN, KC_I)
+
+#define PT_Z    LT(_POINTER, KC_Z)
+#define PT_QUES LT(_POINTER, KC_QUES)
 
 //
 // Abbreviations
 //
 
-#define UNDO LCTL(KC_Z)
-#define CUT  LCTL(KC_X)
-#define COPY LCTL(KC_C)
+#define UNDO  LCTL(KC_Z)
+#define CUT   LCTL(KC_X)
+#define COPY  LCTL(KC_C)
 #define PASTE LCTL(KC_V)
-#define REDO LCTL(KC_Y)
+#define REDO  LCTL(KC_Y)
 
 #define KHYP MOD_HYPR
 #define KMEH MOD_MEH

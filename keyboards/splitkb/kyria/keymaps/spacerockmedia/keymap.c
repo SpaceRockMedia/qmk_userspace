@@ -1,60 +1,54 @@
-/* Copyright 2019 Thomas Baart <thomas@splitkb.com>
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-// #include QMK_KEYBOARD_H
-#define KEYMAP_DISPLAY
+#include QMK_KEYBOARD_H
+
 #include "spacerockmedia.h"
 
 #define __________UPPER__THUMB__________ KC_HYPR, KC_MEH, KC_MEH, KC_HYPR
 
+#define LAYOUT_wrapper(...)   LAYOUT(__VA_ARGS__)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-    [_COLEMAK] = LAYOUT_wrapper(
-      __LPT__, _______________COLEMAK_L_TOP_______________,                                   _______________COLEMAK_R_TOP_______________, __RPT__,
-      __LPM__, _______________COLEMAK_L_MID_GASC__________,                                   _______________COLEMAK_R_MID_CSAG__________, __RPM__,
-      __LPB__, _______________COLEMAK_L_BOT_______________, __________UPPER__THUMB__________, _______________COLEMAK_R_BOT_______________, __RPB__,
-                                 QK_LEAD, ____________THUMB_LEFT____________, ____________THUMB_RIGHT___________, QK_LEAD
-    ),
+[_COLEMAK] = LAYOUT_wrapper(
+    __LPT__, _______________COLEMAK_L_TOP_______________,                                   _______________COLEMAK_R_TOP_______________, __RPT__,
+    __LPM__, _______________COLEMAK_L_MID_HRM_____I_____,                                   _______________COLEMAK_R_MID_HRM___________, __RPM__,
+    __LPB__, _______________COLEMAK_L_BOT_______________, __________UPPER__THUMB__________, _______________COLEMAK_R_BOT_______________, __RPB__,
+                                ______________FIVE_THUMB_LEFT______________, ______________FIVE_THUMB_RIGHT_____________
+),
 
-    [_QWERTY] = LAYOUT_wrapper(
-      __LPT__, _______________QWERTY__L_TOP_______________,                                   _______________QWERTY__R_TOP_______________, __RPT__,
-      __LPM__, _______________QWERTY__L_MID_GASC__________,                                   _______________QWERTY__R_MID_CSAG__________, __RPM__,
-      __LPB__, _______________QWERTY__L_BOT_______________, __________UPPER__THUMB__________, _______________QWERTY__R_BOT_______________, __RPB__,
-                                 QK_LEAD, ____________THUMB_LEFT____________, ____________THUMB_RIGHT___________, QK_LEAD
-    ),
+[_QWERTY] = LAYOUT_wrapper(
+    __LPT__, _______________QWERTY__L_TOP_______________,                                   _______________QWERTY__R_TOP_______________, __RPT__,
+    __LPM__, _______________QWERTY__L_MID_HRM___________,                                   _______________QWERTY__R_MID_HRM___________, __RPM__,
+    __LPB__, _______________QWERTY__L_BOT_______________, __________UPPER__THUMB__________, _______________QWERTY__R_BOT_______________, __RPB__,
+                                ______________FIVE_THUMB_LEFT______________, ______________FIVE_THUMB_RIGHT_____________
+),
 
-    [_NAV] = LAYOUT_wrapper(
-      SH_TOGG, __________________NAV__LT__________________,                                      KC_ASTR, KC_7,    KC_8,    KC_9,    KC_PLUS, SH_TOGG,
-      SH_TOGG, __________________NAV__LM__________________,                                      KC_SLSH, KC_4,    KC_5,    KC_6,    KC_MINS, _______,
-      SNAP1,   SNAP2,   _______, _______, _______, _______, _______, _______,  _______, _______, KC_0,    KC_1,    KC_2,    KC_3,    KC_DOT,  _______,
-                                 _______, _______, LY_DEF, KC_UNDS, _______,   _______, _______, LY_DEF,   _______, _______
-    ),
+[_NAV] = LAYOUT_wrapper(
+    SH_TOGG, __________________NAV__LT__________________,                                      _______, _______, _______, _______, _______, SH_TOGG,
+    _______, __________________NAV__LM__________________,                                      _______, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, _______,
+    SNAP1,   SNAP2,   _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______,
+                               _______, _______, _______, LY_DEF,  _______,  _______, _______, LY_DEF,   _______, _______
+),
 
-    [_NUM] = LAYOUT_wrapper(
-      _______, _______, _______, _______, _______, _______,                                      _______, _______, _______, _______, _______, _______,
-      _______, _______, _______, _______, _______, _______,                                      _______, _______, _______, _______, _______, _______,
-      _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______,
-                                 _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______
-    ),
+[_NUM] = LAYOUT_wrapper(
+    _______, _______, _______, _______, _______, _______,                                      ________________NUM_PAD_TOP________________, _______,
+    _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______,                                      ________________NUM_PAD_MID________________, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, ________________NUM_PAD_BOT________________, _______,
+                               _______, _______, _______, LY_DEF,  _______,  _______, _______, _______, _______, _______
+),
 
-    [_ADJUST] = LAYOUT_wrapper(
-      TG_DEF, RGB_TOG, xxxxxxx, xxxxxxx, xxxxxxx, OS_SWAP,                                      HF_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_MPLY, xxxxxxx,
-      QK_BOOT, __________________RGB_INC__________________,                                     DB_TOGG, xxxxxxx, KC_MPRV, KC_MNXT, KC_VOLU, xxxxxxx,
-      MAKE_H,  __________________RGB_DEC__________________, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, AU_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_VOLD, KC_MUTE,
-                                 xxxxxxx, xxxxxxx, LY_DEF,  xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, LY_DEF,  xxxxxxx, xxxxxxx
-    ),
+[_ADJUST] = LAYOUT_wrapper(
+    TG_DEF,  RGB_TOG, xxxxxxx, xxxxxxx, xxxxxxx, OS_SWAP,                                     HF_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_MPLY, xxxxxxx,
+    QK_BOOT, __________________RGB_INC__________________,                                     DB_TOGG, xxxxxxx, KC_MPRV, KC_MNXT, KC_VOLU, xxxxxxx,
+    MAKE_H,  __________________RGB_DEC__________________, xxxxxxx, xxxxxxx, xxxxxxx, xxxxxxx, AU_TOGG, xxxxxxx, xxxxxxx, xxxxxxx, KC_VOLD, KC_MUTE,
+                               xxxxxxx, xxxxxxx, xxxxxxx, LY_DEF,  xxxxxxx, xxxxxxx, xxxxxxx, LY_DEF,  xxxxxxx, xxxxxxx
+),
+
+[_POINTER] = LAYOUT_wrapper(
+    _______, _______________POINTER_L_TOP_______________,                                     _______________POINTER_R_TOP_______________, _______,
+    _______, _______________POINTER_L_MID_______________,                                     _______________POINTER_R_MID_______________, _______,
+    _______, _______________POINTER_L_BOT_______________, _______, _______, _______, _______, _______________POINTER_R_BOT_______________, _______,
+                               _______, _______, _______MOUSE_LEFT________, __MOUSE_RIGHT___, _______, _______, _______
+),
 
 // /*
 //  * Layer template
