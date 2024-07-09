@@ -4,7 +4,12 @@
             "path": "."
         },
         {
+            "name": "qmk_firmware",
             "path": "../qmk_firmware"
+        },
+        {
+            "name": "bkb_firmware",
+            "path": "../../bastardkb/bastardkb-qmk"
         }
     ],
     "settings": {
@@ -31,6 +36,12 @@
                 },
                 "path": "C:/QMK_MSYS/usr/bin/bash.exe"
             }
+        },
+        "vars": {
+            "compile": "/qmk_userspace/bin/compile",
+            "win_compile": "/qmk_userspace/bin/compile",
+            "dc": "docker compose run --rm",
+            "firm_bkb": "-v ../../bastardkb/bastardkb-qmk:/qmk_firmware"
         }
     }
 }

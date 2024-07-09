@@ -1,42 +1,26 @@
 {
   "tasks": [
     {
-      "command": "docker compose run --rm qmk_userspace qmk compile -kb splitkb/kyria/rev3 -km spacerockmedia",
+      "command": "${config:vars.compile} bkb bastardkb/charybdis/3x6",
       "group": {
         "isDefault": true,
         "kind": "build"
       },
-      "label": "Build kyria",
+      "label": "Build CMini",
       "problemMatcher": [],
       "type": "shell"
     },
     {
-      "command": "docker compose run --rm qmk_userspace qmk compile -kb reviung/reviung41 -km spacerock",
+      "command": "${config:vars.compile} bkb bastardkb/charybdis/3x6",
       "group": {
         "isDefault": true,
         "kind": "build"
       },
-      "label": "Build reviung41",
+      "label": "Build CMini",
+      "problemMatcher": [],
       "type": "shell"
     },
-    {
-      "command": "docker compose run --rm qmk_userspace qmk compile -kb crkbd -km spacerock",
-      "group": {
-        "isDefault": true,
-        "kind": "build"
-      },
-      "label": "Build crkbd",
-      "type": "shell"
-    },
-    {
-      "command": "docker compose run --rm qmk_userspace qmk compile -kb hillside/52 -km spacerock",
-      "group": {
-        "isDefault": false,
-        "kind": "build"
-      },
-      "label": "Build hillside",
-      "type": "shell"
-    }
+
   ],
   // See https://go.microsoft.com/fwlink/?LinkId=733558
   // for the documentation about the tasks.json format

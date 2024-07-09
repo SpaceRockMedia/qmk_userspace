@@ -1,0 +1,14 @@
+---
+
+services:
+  qmk_userspace:
+    image: ghcr.io/qmk/qmk_cli:latest
+    container_name: qmk_userspace
+    working_dir: /qmk_firmware
+    environment:
+      QMK_USERSPACE: /qmk_userspace
+      KEYBOARD: bastardkb/charybdis/3x6/v2/splinky_3
+      KEYMAP: spacerockmedia
+    volumes:
+      - ./:/qmk_userspace
+      - /qmk_firmware

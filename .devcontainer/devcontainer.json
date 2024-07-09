@@ -1,9 +1,6 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-    "name": "QMK CLI",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "image": "ghcr.io/qmk/qmk_cli",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -17,17 +14,20 @@
             ]
         }
     },
-    "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/setup.sh ${containerWorkspaceFolder}"
-
+    "dockerFile": "Dockerfile",
+    "mounts": [
+        "type=bind,source=${workspaceFolder},target=/qmk_userspace",
+        "type=bind,source=f:/Projects/spacerock/qmk_firmware,target=/qmk_firmware",
+        "type=bind,source=f:/Projects/bastardkb/bastardkb-qmk,target=/bkb_firmware"
+    ],
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {},
-
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
-
     // Configure tool-specific properties.
     // "customizations": {},
-
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
     // "remoteUser": "root"
+    "name": "QMK CLI",
+    "workspaceFolder": "/qmk_firmware"
 }
