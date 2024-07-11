@@ -3,6 +3,6 @@
 
 #pragma once
 
-#include "spacerockmedia.h"
+#include "features/achordion/achordion.h"
 
 bool process_record_features_achordion(uint16_t keycode, keyrecord_t *record);

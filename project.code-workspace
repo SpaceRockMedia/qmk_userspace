@@ -3,14 +3,6 @@
         {
             "path": "."
         },
-        {
-            "name": "qmk_firmware",
-            "path": "../qmk_firmware"
-        },
-        {
-            "name": "bkb_firmware",
-            "path": "../../bastardkb/bastardkb-qmk"
-        }
     ],
     "settings": {
         "files.associations": {

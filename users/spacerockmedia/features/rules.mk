@@ -1,83 +1,68 @@
-SRC += $(USER_PATH)/features/callbacks.c \
-       $(USER_PATH)/features/process_records.c \
-       $(USER_PATH)/features/layers/callbacks.c \
-       $(USER_PATH)/features/layers/process_records.c \
-       $(USER_PATH)/features/macros/process_records.c
+-include $(USER_PATH)/features/layers/rules.mk
+-include $(USER_PATH)/features/macros/rules.mk
 
-
--include $(USER_PATH)/features/taps/rules.mk
-
-FEATURE_ACHORDION_ENABLE ?= yes
-ifeq ($(strip $(FEATURE_ACHORDION_ENABLE)), yes)
-	-include $(USER_PATH)/features/achordion/rules.mk
-	OPT_DEFS += -DFEATURE_ACHORDION_ENABLE
+TAP_DANCE_ENABLE ?= yes
+ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
+    -include $(USER_PATH)/features/taps/rules.mk
 endif
 
-FEATURE_CALLUM_ENABLE ?= yes
-ifeq ($(strip $(FEATURE_CALLUM_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/callum/callum.c
-	SRC += $(USER_PATH)/features/callum/swapper.c
-	SRC += $(USER_PATH)/features/callum/process_records.c
-	OPT_DEFS += -DFEATURE_CALLUM_ENABLE
-endif
-
-FEATURE_REPEAT_KEY_ENABLE ?= no
-ifeq ($(strip $(FEATURE_REPEAT_KEY_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/repeat_key/callbacks.c
-	SRC += $(USER_PATH)/features/repeat_key/repeat_key.c
-	OPT_DEFS += -DFEATURE_REPEAT_KEY_ENABLE
-endif
-
-FEATURE_SENTENCE_CASE_ENABLE ?= no
-ifeq ($(strip $(FEATURE_SENTENCE_CASE_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/sentence_case/sentence_case.c
-	OPT_DEFS += -DFEATURE_SENTENCE_CASE_ENABLE
-endif
-
-LEADER_ENABLE ?= yes
-ifeq ($(strip $(LEADER_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/leader/leader.c
+REPEAT_KEY_ENABLE  ?= no
+ifeq ($(strip $(REPEAT_KEY_ENABLE )), yes)
+    -include $(USER_PATH)/features/repeat_key/rules.mk
 endif
 
 COMBO_ENABLE ?= yes
 ifeq ($(strip $(COMBO_ENABLE)), yes)
-	VPATH += keyboards/gboards
-	INTROSPECTION_KEYMAP_C = $(USER_PATH)/features/combos/combos.c
+    -include $(USER_PATH)/features/combos/rules.mk
+endif
+
+LEADER_ENABLE ?= no
+ifeq ($(strip $(LEADER_ENABLE)), yes)
+    -include $(USER_PATH)/features/leader/rules.mk
 endif
 
 AUDIO_ENABLE ?= no
 ifeq ($(strip $(AUDIO_ENABLE)), yes)
-	MUSIC_ENABLE ?= no
-# 	SRC += $(USER_PATH)/features/audio/udio.c
+     -include $(USER_PATH)/features/audio/rules.mk
 endif
 
-OLED_ENABLE        ?= no
+OLED_ENABLE ?= no
 ifeq ($(strip $(OLED_ENABLE)), yes)
-	OLED_DRIVER ?= ssd1306
-	WPM_ENABLE ?= yes
-	ifeq ($(strip $(WPM_ENABLE)), yes)
-		WPM_SAMPLE_SECONDS = 15
-	endif
-	SRC += $(USER_PATH)/features/oled/oled.c
-    # DEFERRED_EXEC_ENABLE = yes
+     -include $(USER_PATH)/features/oled/rules.mk
+endif
+
+CAPS_WORD_ENABLE ?= no
+ifeq ($(strip $(CAPS_WORD_ENABLE)), yes)
+    -include $(USER_PATH)/features/caps_word/rules.mk
 endif
 
 RGB_MATRIX_ENABLE ?= no
 ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/rgb/callbacks.c
+    -include $(USER_PATH)/features/rgb/rules.mk
 endif
 
-TAP_DANCE_ENABLE ?= yes
-ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/taps/tap_dances.c
+POINTING_DEVICE_ENABLE ?= yes
+ifeq ($(strip $(POINTING_DEVICE_ENABLE)), yes)
+    -include $(USER_PATH)/features/pointing/rules.mk
 endif
 
-# tapping
-DYNAMIC_TAPPING_TERM_ENABLE ?= no
-TAPPING_TERM_PER_KEY        ?= yes
-
-CAPS_WORD_ENABLE ?= no
-ifeq ($(strip $(CAPS_WORD_ENABLE)), yes)
-	SRC += $(USER_PATH)/features/caps_word/callbacks.c
-	SRC += $(USER_PATH)/features/caps_word/process_records.c
+FEATURE_ACHORDION_ENABLE ?= no
+ifeq ($(strip $(FEATURE_ACHORDION_ENABLE)), yes)
+    -include $(USER_PATH)/features/achordion/rules.mk
+    OPT_DEFS += -DFEATURE_ACHORDION_ENABLE
 endif
+
+FEATURE_CALLUM_ENABLE ?= no
+ifeq ($(strip $(FEATURE_CALLUM_ENABLE)), yes)
+    -include $(USER_PATH)/features/callum/rules.mk
+    OPT_DEFS += -DFEATURE_CALLUM_ENABLE
+endif
+
+FEATURE_SENTENCE_CASE_ENABLE ?= no
+ifeq ($(strip $(FEATURE_SENTENCE_CASE_ENABLE)), yes)
+    -include $(USER_PATH)/features/sentence_case/rules.mk
+    OPT_DEFS += -DFEATURE_SENTENCE_CASE_ENABLE
+endif
+
+SRC += $(USER_PATH)/features/callbacks.c \
+       $(USER_PATH)/features/process_records.c

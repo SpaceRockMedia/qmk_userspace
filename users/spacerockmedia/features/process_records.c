@@ -1,7 +1,6 @@
 #include QMK_KEYBOARD_H
-#include "spacerockmedia.h"
-#include "features/process_records.h"
 
+#include "features/process_records.h"
 
 /**
  * @brief Keycode handler for keymaps

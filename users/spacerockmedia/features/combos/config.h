@@ -3,6 +3,9 @@
 
 #pragma once
 
+#ifdef COMBO_TERM
+#    undef COMBO_TERM
+#endif
 #define COMBO_TERM 35
-// use GAME layer for combo binding
+// use QWERTY layer for combo binding
 #define COMBO_ONLY_FROM_LAYER 0

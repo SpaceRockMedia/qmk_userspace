@@ -4,7 +4,12 @@
 #pragma once
 
 #if defined(WPM_ENABLE)
-#    include "features/oled/wpm_config.h"
+    // #define WPM_LAUNCH_CONTROL
+    // #define WPM_UNFILTERED
+    #define WPM_ALLOW_COUNT_REGRESSION
+    #define WPM_SAMPLE_SECONDS 10
+    #define WPM_SAMPLE_PERIODS 50
+    #define WPM_ESTIMATED_WORD_SIZE 5
 #endif
 
 #ifndef OLED_UPDATE_INTERVAL
@@ -19,9 +24,9 @@
 #define OLED_DISABLE_TIMEOUT
 
 #undef OLED_FONT_H
-// #define OLED_FONT_H "features/oled/fonts/drashna_font.h"
+// #define OLED_FONT_H "features/oled/fonts/drashna.h"
 // klor font
-#define OLED_FONT_H  "features/oled/fonts/glcdfont.c"
+#define OLED_FONT_H  "features/oled/fonts/klor.c"
 // #define OLED_FONT_END 255
 // #    define OLED_FONT_5X5
 // #    define OLED_FONT_AZTECH

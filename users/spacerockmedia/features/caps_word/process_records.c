@@ -1,7 +1,7 @@
 
 
 #include QMK_KEYBOARD_H
-#include "spacerockmedia.h"
+
 #include "features/caps_word/process_records.h"
 
 bool process_record_features_caps_word(uint16_t keycode, keyrecord_t *record) {

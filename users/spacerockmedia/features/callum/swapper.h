@@ -1,7 +1,8 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-#include "features/process_records.h"
+
+#include "features/callum/swapper.h"
 
 // Implements cmd-tab like behaviour on a single key. On first tap of trigger
 // cmdish is held and tabish is tapped -- cmdish then remains held until some

@@ -1,7 +1,9 @@
 #pragma once
 
 #include QMK_KEYBOARD_H
-#include "features/process_records.h"
+
+#include "features/callum/process_records.h"
+#include "features/callum/swapper.h"
 
 // Represents the four states a oneshot key can be in
 typedef enum {

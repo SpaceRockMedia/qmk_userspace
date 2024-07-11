@@ -46,7 +46,6 @@
 #pragma once
 
 #include "quantum.h"
-#include "features/process_records.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -20,22 +20,23 @@
 #include <stdio.h>
 #include "lib/lib8tion/lib8tion.h"
 
-#include "spacerockmedia.h"
 #include "features/oled/oled.h"
 #include "features/oled/assets.h"
 
 const char *get_layer_name_string(layer_state_t state) {
     switch (get_highest_layer(state)) {
-        case _COLEMAK:
-            return "Colemak\n";
         case _QWERTY:
             return "QWERTY\n";
+        case _COLEMAK:
+            return "Colemak\n";
         case _NAV:
             return "Nav\n";
         case _NUM:
             return "Media\n";
         case _ADJUST:
             return "Adjust\n";
+        case _POINTER:
+            return "Pointer\n";
         default:
             return "Unknown\n";
     }

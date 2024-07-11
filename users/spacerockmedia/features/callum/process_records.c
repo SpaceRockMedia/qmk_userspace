@@ -1,9 +1,7 @@
 #include QMK_KEYBOARD_H
-#include "spacerockmedia.h"
+
 #include "features/callum/process_records.h"
-#include "features/callum/callum.h"
-#include "features/callum/swapper.h"
-#include "os_detection.h"
+
 
 bool sw_win_active = false;
 bool sw_lang_active = false;

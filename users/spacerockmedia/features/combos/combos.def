@@ -34,7 +34,7 @@ COMB(cmHash,  KC_HASH, KC_E, HRM_CTL_D)
 COMB(cmDollr, KC_DLR,  KC_R, HRM_SFT_F)
 COMB(cmPerc,  KC_PERC, KC_T, KC_G)
 
-COMB(cmGrave, KC_GRV,  HRM_GUI_A, KC_Z)
+COMB(cmGrave, KC_GRV,  HRM_GUI_A, PT_Z)
 COMB(cmTilde, KC_TILD, HRM_ALT_S, KC_X)
 COMB(cmBslh,  KC_BSLS, HRM_CTL_D, KC_C)
 COMB(cmEqual, KC_EQL,  HRM_SFT_F, KC_V)
@@ -47,12 +47,12 @@ COMB(cmAstr,  KC_ASTR, KC_I, HRM_CTL_K)
 COMB(cmPlus,  KC_PLUS, KC_O, HRM_ALT_L)
 COMB(cmDqt,   KC_DQT,  KC_P, HRM_GUI_SCLN)
 
-COMB(cmUnder, KC_UNDS, KC_H, KC_N)
-COMB(cmPipe,  KC_PIPE, HRM_SFT_J, KC_M)
-COMB(cmFslh,  KC_SLSH, HRM_CTL_K, KC_COMM)
-COMB(cmMinus, KC_MINS, HRM_ALT_L, KC_DOT)
+COMB(cmUnder,     KC_UNDS, KC_H, KC_N)
+COMB(cmPipe,      KC_PIPE, HRM_SFT_J, KC_M)
+COMB(cmFslh,      KC_SLSH, HRM_CTL_K, KC_COMM)
+COMB(cmMinus,     KC_MINS, HRM_ALT_L, KC_DOT)
 COMB(cmMinusLeft, KC_MINS, HRM_ALT_L, KC_LEFT)
-COMB(cmQuot,  KC_QUOT, HRM_GUI_SCLN, KC_QUES)
+COMB(cmQuot,      KC_QUOT, HRM_GUI_SCLN, KC_QUES)
 
 //----------------------------------------------------------------
 // HORIZONTAL Combos
@@ -71,7 +71,7 @@ COMB(cbRpt,   QK_REP,  HRM_SFT_F, KC_G)
 COMB(cbLHrmMeh, OSM(MOD_MEH), HRM_ALT_S, HRM_CTL_D, HRM_SFT_F)
 COMB(cbLHrmHyp, OSM(MOD_HYPR), HRM_GUI_A, HRM_ALT_S, HRM_CTL_D, HRM_SFT_F)
 
-COMB(cbUndo,  OS_UNDO,  KC_Z, KC_X)
+COMB(cbUndo,  OS_UNDO,  PT_Z, KC_X)
 COMB(cbCut,   OS_CUT,   KC_X, KC_C)
 COMB(cbCopy,  OS_COPY,  KC_C, KC_V)
 COMB(cbPaste, OS_PASTE, KC_X, KC_V)
@@ -95,7 +95,7 @@ COMB(cbRHrmHyp, OSM(MOD_HYPR), HRM_SFT_J, HRM_CTL_K, HRM_ALT_L, HRM_GUI_SCLN)
    └───────────────────────────────────────────────────────────┘ */
 
 
-COMB(cbF1,   KC_F1,  KC_Q, KC_Z)
+COMB(cbF1,   KC_F1,  KC_Q, PT_Z)
 COMB(cbF2,   KC_F2,  KC_W, KC_X)
 COMB(cbF3,   KC_F3,  KC_E, KC_C)
 COMB(cbF4,   KC_F4,  KC_R, KC_V)

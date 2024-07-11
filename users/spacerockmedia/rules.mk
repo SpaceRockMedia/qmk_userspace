@@ -26,9 +26,8 @@ SWAP_HANDS_ENABLE  ?= no
 BACKLIGHT_ENABLE      = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE       = no        # Enable keyboard RGB underglow
 RGB_MATRIX_ENABLE    ?= yes     # do not use together with RGBLIGHT_ENABLE
-RGB_MATRIX_DRIVER    ?= WS2812 # RGB matrix driver support
+# RGB_MATRIX_DRIVER    ?= WS2812 # RGB matrix driver support
 RGBLIGHT_ENABLE      ?= no      # Enable keyboard RGB underglow
-RGB_MATRIX_SUPPORTED ?= yes
 
 # ┌─────────────────────────────────────────────────┐
 # │ s o f t w a r e   f e a t u r e s               │

@@ -20,9 +20,9 @@
  * <https://getreuer.info/posts/keyboards/sentence-case>
  */
 
-#include "features/sentence_case/sentence_case.h"
-
 #include <string.h>
+
+#include "features/sentence_case/sentence_case.h"
 
 #ifdef NO_ACTION_ONESHOT
 // One-shot keys must be enabled for Sentence Case. One-shot keys are enabled

@@ -3,7 +3,17 @@
 
 #pragma once
 
-#include "keycodes/layers.h"
+#include QMK_KEYBOARD_H
+
+typedef enum userspace_layers {
+    _QWERTY = 0,
+    _COLEMAK,
+    _NAV,
+    _NUM,
+    _ADJUST,
+    _POINTER,
+} CUSTOM_LAYERS_T;
+
 #include "keycodes/wrappers.h"
 
 typedef enum userspace_custom_keycodes {

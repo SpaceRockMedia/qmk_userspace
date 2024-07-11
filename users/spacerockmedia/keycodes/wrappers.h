@@ -71,13 +71,13 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________COLEMAK_R_MID_HRM___________ KC_M, ___________COLEMAK_SCAG___________
 #define _______________COLEMAK_R_BOT_______________ KC_K,    KC_H,    KC_COMM, KC_DOT,  PT_QUES
 
-#define _______________POINTER_L_TOP_______________ _______, WS_LEFT, W_UP,    WS_RGHT, S_D_MOD
-#define _______________POINTER_L_MID_______________ _______, W_LEFT,  W_DOWN,  W_RGHT,  DPI_MOD
-#define _______________POINTER_L_BOT_______________ xxxxxxx, DRGSCRL, SNIPING, _______, _______
+#define _______________POINTER_L_TOP_______________ S_D_MOD , WS_LEFT, W_UP,    WS_RGHT, DPI_MOD
+#define _______________POINTER_L_MID_______________ S_D_RMOD, W_LEFT,  W_DOWN,  W_RGHT,  DPI_RMOD
+#define _______________POINTER_L_BOT_______________ xxxxxxx,  DRGSCRL, SNIPING, _______, _______
 
-#define _______________POINTER_R_TOP_______________ S_D_MOD, WS_LEFT, W_UP,    WS_RGHT, _______
-#define _______________POINTER_R_MID_______________ DPI_MOD, W_LEFT,  W_DOWN,  W_RGHT,  _______
-#define _______________POINTER_R_BOT_______________ _______, _______, SNIPING, DRGSCRL, xxxxxxx
+#define _______________POINTER_R_TOP_______________ DPI_MOD , WS_LEFT, W_UP,    WS_RGHT, S_D_MOD
+#define _______________POINTER_R_MID_______________ DPI_RMOD, W_LEFT,  W_DOWN,  W_RGHT,  S_D_RMOD
+#define _______________POINTER_R_BOT_______________ _______,  _______, SNIPING, DRGSCRL, xxxxxxx
 
 #define _TWO_THUMB_LEFT_                            LT(_NUM, KC_SPC), TD_LSFT_NUM
 #define _TWO_THUMB_RGHT_                            TD_RSFT_NAV, LT(_NAV, KC_ENT)

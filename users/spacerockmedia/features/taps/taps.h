@@ -3,9 +3,4 @@
 
 #pragma once
 
-#define LAYER_STATE_16BIT
-
-#define ENABLE_COMPILE_KEYCODE
-
-#include "keycodes/custom_codes.h"
-#include "features/config.h"
+td_state_t cur_dance(tap_dance_state_t *state);

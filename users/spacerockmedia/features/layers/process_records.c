@@ -1,6 +1,6 @@
 
 #include QMK_KEYBOARD_H
-#include "spacerockmedia.h"
+
 #include "features/layers/process_records.h"
 
 #ifdef HAPTIC_ENABLE

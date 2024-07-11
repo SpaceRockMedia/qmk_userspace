@@ -3,6 +3,3 @@
 
 #pragma once
 #include QMK_KEYBOARD_H
-
-#include "keycodes/custom_codes.h"
-#include "features/features.h"

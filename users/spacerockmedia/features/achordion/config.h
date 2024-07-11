@@ -3,5 +3,4 @@
 
 #pragma once
 
-
 #define ACHORDION_STREAK
