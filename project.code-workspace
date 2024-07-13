@@ -3,6 +3,9 @@
         {
             "path": "."
         },
+        {
+            "path": "../../bastardkb/bastardkb-qmk"
+        },
     ],
     "settings": {
         "files.associations": {
