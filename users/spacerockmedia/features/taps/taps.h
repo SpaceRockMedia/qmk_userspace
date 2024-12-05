@@ -3,4 +3,6 @@
 
 #pragma once
 
+
 td_state_t cur_dance(tap_dance_state_t *state);
+tap_dance_action_t tap_dance_actions[2];

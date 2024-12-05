@@ -47,9 +47,9 @@ AUTO_SHIFT_ENABLE   ?= no
 # └─────────────────────────────────────────────────┘
 
 BOOTMAGIC_ENABLE ?= no      # Enable Bootmagic Lite
-ifeq ($(strip $(BOOTMAGIC_ENABLE)), yes)
-	SRC += util/util.c
-endif
+# ifeq ($(strip $(BOOTMAGIC_ENABLE)), yes)
+# 	SRC += util/util.c
+# endif
 
 COMMAND_ENABLE = no
 

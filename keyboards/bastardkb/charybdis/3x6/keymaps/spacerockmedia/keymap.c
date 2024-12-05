@@ -1,7 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#include "spacerockmedia.h"
-
 /** \brief Automatically enable sniping-mode on the pointer layer. */
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER _POINTER
 
@@ -16,6 +14,8 @@ static uint16_t auto_pointer_layer_timer = 0;
 #        define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 8
 #    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
 #endif     // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
+
+#include "spacerockmedia.h"
 
 // #define LAYOUT_wrapper(...)   LAYOUT(__VA_ARGS__)
 #define LAYOUT_wrapper(...)   LAYOUT_charybdis_3x6(__VA_ARGS__)
@@ -48,11 +48,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NAV] = LAYOUT_wrapper(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       _______, __________________NAV__LT__________________,    _______, _______, _______, _______, _______, _______,
+       SH_TOGG, __________________NAV__LT__________________,    _______, _______, _______, _______, _______, SH_TOGG,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        _______, __________________NAV__LM__________________,    _______, _______________SCAG_______________, _______,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______,
+       ____________________FN_ROW_LEFT_____________________,    ____________________FN_ROW_RIGHT____________________,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, _______, _______,    _______, _______
   //                            ╰───────────────────────────╯ ╰──────────────────╯
@@ -96,6 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 // clang-format on
+
 #ifdef POINTING_DEVICE_ENABLE
 #    ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {

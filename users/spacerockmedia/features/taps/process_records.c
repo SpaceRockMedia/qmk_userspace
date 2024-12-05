@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "features/taps/process_records.h"
+#include "features/taps/taps.h"
 
 bool process_record_features_taps(uint16_t keycode, keyrecord_t* record) {
     tap_dance_action_t *action;

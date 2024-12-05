@@ -2,10 +2,7 @@
     "folders": [
         {
             "path": "."
-        },
-        {
-            "path": "../../bastardkb/bastardkb-qmk"
-        },
+        }
     ],
     "settings": {
         "files.associations": {
@@ -33,10 +30,13 @@
             }
         },
         "vars": {
-            "compile": "/qmk_userspace/bin/compile",
-            "win_compile": "/qmk_userspace/bin/compile",
+            "compile": "${workspaceFolder}/bin/compile.sh",
+            "compile_docker": "${workspaceFolder}/bin/compile_docker.sh",
             "dc": "docker compose run --rm",
-            "firm_bkb": "-v ../../bastardkb/bastardkb-qmk:/qmk_firmware"
+            "firm_bkb": "-v ../../bastardkb/bastardkb-qmk:/qmk_firmware",
+            "root_bkb": "${localEnv:HOME}/projects/bkb/bastardkb-qmk",
+            "root_srm": "${localEnv:HOME}/projects/spacerock/qmk_firmware",
+            "win_compile": "/qmk_userspace/bin/compile"
         }
     }
 }

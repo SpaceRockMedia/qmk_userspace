@@ -79,8 +79,8 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________POINTER_R_MID_______________ DPI_RMOD, W_LEFT,  W_DOWN,  W_RGHT,  S_D_RMOD
 #define _______________POINTER_R_BOT_______________ _______,  _______, SNIPING, DRGSCRL, xxxxxxx
 
-#define _TWO_THUMB_LEFT_                            LT(_NUM, KC_SPC), TD_LSFT_NUM
-#define _TWO_THUMB_RGHT_                            TD_RSFT_NAV, LT(_NAV, KC_ENT)
+#define _TWO_THUMB_LEFT_                            LT(_NUM, KC_SPC), LT(_NUM, KC_LSFT)
+#define _TWO_THUMB_RGHT_                            LT(_NAV, KC_RSFT), LT(_NAV, KC_ENT)
 
 #define ____THREE_THUMB_LEFT_____                   MEH_T(KC_BSPC), _TWO_THUMB_LEFT_
 #define ____THREE_THUMB_RIGHT____                   _TWO_THUMB_RGHT_, MEH_T(KC_DEL)

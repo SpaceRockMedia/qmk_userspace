@@ -11,10 +11,10 @@
 #define RGB_MATRIX_TIMEOUT 3000000 // number of milliseconds to wait until rgb automatically turns off
 #define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
 #define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
-#ifdef RGB_MATRIX_DEFAULT_MODE
-#    undef RGB_MATRIX_DEFAULT_MODE
-#endif
-#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_TYPING_HEATMAP // Sets the default mode, if none has been set
+// #ifdef RGB_MATRIX_DEFAULT_MODE
+// #    undef RGB_MATRIX_DEFAULT_MODE
+// #endif
+// #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_TYPING_HEATMAP // Sets the default mode, if none has been set
 #ifdef RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #    undef RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #endif
@@ -64,7 +64,7 @@
 // #define ENABLE_RGB_MATRIX_PIXEL_FLOW
 // #define ENABLE_RGB_MATRIX_PIXEL_RAIN
 // required RGB_MATRIX_FRAMEBUFFER_EFFECTS
-#define ENABLE_RGB_MATRIX_TYPING_HEATMAP
+// #define ENABLE_RGB_MATRIX_TYPING_HEATMAP
 // #define ENABLE_RGB_MATRIX_DIGITAL_RAIN
 // requires RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES
 // #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE

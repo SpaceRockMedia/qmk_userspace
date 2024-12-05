@@ -2,21 +2,27 @@ FROM ghcr.io/qmk/qmk_cli
 
 ENV KEYBOARD=bastardkb/charybdis/3x6 \
     KEYMAP=spacerockmedia \
-    FIRMWARE=qmk
+    FIRMWARE=Bastardkb/bastardkb-qmk
 
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python3 get-pip.py
+RUN python3 -m pip install qmk
+RUN rm get-pip.py
 
-WORKDIR /qmk_firmware
+RUN python3 -m pip install --upgrade milc
 
-RUN python3 -m pip install --upgrade milc qmk
-RUN mkdir -p /qmk_userspace
-RUN git config --global --add safe.directory /${FIRMWARE}_firmware
-RUN git config --global --add safe.directory /qmk_userspace
-RUN qmk config user.qmk_home=/qmk_firmware
+WORKDIR /workspaces/qmk_firmware
+
+RUN git clone -b bkb-master https://github.com/${FIRMWARE}.git /workspaces/qmk_firmware
+RUN git config --global --add safe.directory /workspaces/qmk_firmware
+RUN python3 -m pip install -r requirements.txt
+
+RUN git config --global --add safe.directory /workspaces/qmk_userspace
+
+RUN qmk config user.qmk_home=/workspaces/qmk_firmware
+RUN qmk config user.overlay_dir=/workspaces/qmk_userspace
 RUN qmk config user.keyboard=$KEYBOARD
 RUN qmk config user.keymap=$KEYMAP
-RUN qmk config user.overlay_dir=/qmk_userspace
 
-# RUN qmk git-submodule
-RUN qmk setup
-
-CMD ["qmk", "compile"]
+RUN qmk setup -y
+RUN qmk git-submodule

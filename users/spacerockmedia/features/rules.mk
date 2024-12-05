@@ -41,7 +41,7 @@ ifeq ($(strip $(RGB_MATRIX_ENABLE)), yes)
     -include $(USER_PATH)/features/rgb/rules.mk
 endif
 
-POINTING_DEVICE_ENABLE ?= yes
+POINTING_DEVICE_ENABLE ?= no
 ifeq ($(strip $(POINTING_DEVICE_ENABLE)), yes)
     -include $(USER_PATH)/features/pointing/rules.mk
 endif

@@ -11,16 +11,45 @@
       "type": "shell"
     },
     {
-      "command": "${config:vars.compile} bkb bastardkb/charybdis/3x6",
+      "command": "${config:vars.compile_docker} bkb bastardkb/charybdis/3x6",
       "group": {
         "isDefault": true,
         "kind": "build"
       },
-      "label": "Build CMini",
+      "label": "Docker Build CMini",
       "problemMatcher": [],
       "type": "shell"
     },
-
+    {
+      "command": "${config:vars.compile} qmk splitkb/kyria",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "label": "Build Kyria",
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "command": "${config:vars.compile} qmk fingerpunch/pinkiesout/v3",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "label": "Build pinkiesout",
+      "problemMatcher": [],
+      "type": "shell"
+    },
+    {
+      "command": "qmk clean",
+      "group": {
+        "isDefault": true,
+        "kind": "build"
+      },
+      "label": "qmk clean",
+      "problemMatcher": [],
+      "type": "shell"
+    }
   ],
   // See https://go.microsoft.com/fwlink/?LinkId=733558
   // for the documentation about the tasks.json format
